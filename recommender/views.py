@@ -3,6 +3,8 @@ from .forms import CustomerForm
 from .models import Customer, InsuranceProduct, Recommendation
 from .ml_model import train_model, get_recommendations
 
+
+
 def home(request):
     if request.method == 'POST':
         form = CustomerForm(request.POST)
@@ -17,6 +19,7 @@ def recommendations(request, customer_id):
     customer = Customer.objects.get(id=customer_id)
     model, scaler = train_model()  # You might want to cache this
     recommendations = get_recommendations(model, scaler, customer)
+
     
     # Save recommendations to database
     for product, score in recommendations:
