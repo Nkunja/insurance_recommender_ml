@@ -1,0 +1,6 @@
+<h1>Your Recommended Insurance Products</h1>
+<ul>
+{% for product, score in recommendations %}
+    <li>{{ product.name }} - Score: {{ score }}</li>
+{% endfor %}
+</ul>
