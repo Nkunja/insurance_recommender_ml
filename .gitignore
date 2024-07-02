@@ -1,2 +1,5 @@
 venv
 db.sqlite
+__pycache__
+recommender/__pycache__
+insurance/__pycache__
